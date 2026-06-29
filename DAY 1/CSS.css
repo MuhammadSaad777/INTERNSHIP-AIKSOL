@@ -1,0 +1,124 @@
+header
+{
+    text-align:center;
+    font-size:48px;
+    color:aqua;
+}
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: sans-serif;
+}
+nav {
+    font-size: 36px;
+    color: gold;
+    text-align: center;
+}
+.das
+{
+    margin-left:350px;
+    color:gold;
+    font-size:64px;
+}
+.d1 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left:300px;
+    font-size:36px;
+}
+.s1{
+    font-size:48px;
+}
+.l1 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: 100px;
+    font-size: 36px;
+}
+.v2{
+    margin-left:150px;
+}
+.b1
+{
+    font-size:64px;
+    margin-left:300px;
+    color:red;
+}
+.a3{
+    font-size:48px;
+}
+.a4{
+    font-size:36px;
+}
+.a6{
+    font-size:40px;
+}
+.c7{
+    font-size:34px;
+}
+.c6 {
+    font-size: 34px;
+}
+.a8 {
+    font-size: 40px;
+}
+.a9 {
+    font-size: 40px;
+}
+.c9 {
+    font-size: 34px;
+}
+.a10 {
+    font-size: 64px;
+    margin-left: 300px;
+    color:darkmagenta;
+}
+
+.a11 {
+    font-size: 40px;
+}
+
+.c11 {
+    font-size: 34px;
+}
+
+.a12 {
+    font-size: 40px;
+}
+
+.c12 {
+    font-size: 34px;
+}
+
+
+.b10 {
+    font-size: 64px;
+    margin-left: 300px;
+    color:darksalmon;
+}
+
+.a13 {
+    font-size: 40px;
+}
+
+.c13 {
+    font-size: 34px;
+}
+
+.b11 {
+    font-size: 64px;
+    margin-left: 300px;
+    color:darkgreen;
+}
+
+.c14 {
+    font-size: 34px;
+}
+
+
+
+
+
+
