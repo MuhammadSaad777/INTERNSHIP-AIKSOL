@@ -39,6 +39,12 @@
 
         </select>
 
+        <textarea
+            id="description"
+            placeholder="Description (optional)"
+            rows="2"
+        ></textarea>
+
         <button type="submit">
             Add Expense
         </button>
@@ -50,7 +56,84 @@
         <span id="total">0</span>
     </h2>
 
+    <div id="filters">
+
+        <h3>Filters</h3>
+
+        <input
+            type="text"
+            id="searchName"
+            placeholder="Search by expense name..."
+        >
+
+        <input
+            type="text"
+            id="filterDescription"
+            placeholder="Search by description..."
+        >
+
+        <select id="filterCategory">
+            <option value="">All Categories</option>
+            <option>Food</option>
+            <option>Transport</option>
+            <option>Education</option>
+            <option>Shopping</option>
+            <option>Entertainment</option>
+            <option>Other</option>
+        </select>
+
+        <input
+            type="number"
+            id="filterMaxAmount"
+            placeholder="Max Amount (e.g. up to 500)"
+            min="0"
+        >
+
+        <div class="date-filters">
+            <label>
+                From:
+                <input type="date" id="filterDateFrom">
+            </label>
+            <label>
+                To:
+                <input type="date" id="filterDateTo">
+            </label>
+        </div>
+
+        <button type="button" id="clearFilters">Clear Filters</button>
+
+    </div>
+
     <div id="expenseList"></div>
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal-overlay hidden">
+        <div class="modal-box">
+
+            <h2>Edit Expense</h2>
+
+            <input type="text" id="editName" placeholder="Expense Name">
+
+            <input type="number" id="editAmount" placeholder="Amount" min="1">
+
+            <select id="editCategory">
+                <option>Food</option>
+                <option>Transport</option>
+                <option>Education</option>
+                <option>Shopping</option>
+                <option>Entertainment</option>
+                <option>Other</option>
+            </select>
+
+            <textarea id="editDescription" placeholder="Description (optional)" rows="2"></textarea>
+
+            <div class="modal-buttons">
+                <button type="button" id="saveEdit">Save</button>
+                <button type="button" id="cancelEdit" class="cancel-btn">Cancel</button>
+            </div>
+
+        </div>
+    </div>
 
     <script src="ExpenseTracker.js"></script>
 

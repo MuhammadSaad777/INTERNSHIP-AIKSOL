@@ -16,7 +16,7 @@
 
         <textarea
             id="noteInput"
-            rows="5"
+            rows="8"
             placeholder="Write your note here..."
         ></textarea>
 
@@ -32,7 +32,53 @@
 
     <h2>Saved Notes</h2>
 
+    <p class="subtitle">Search or filter by date to find a note quickly.</p>
+
+    <div class="controls">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search notes... (e.g. hor → horseriding)"
+        >
+
+        <input
+            type="date"
+            id="dateFilterInput"
+        >
+
+        <button id="clearFiltersBtn" type="button">
+            Clear Filters
+        </button>
+
+    </div>
+
     <div id="notesContainer"></div>
+
+</div>
+
+<!-- Edit Modal -->
+<div id="editModal" class="modal-overlay">
+
+    <div class="modal-box">
+
+        <h3>Edit Note</h3>
+
+        <textarea id="editTextarea" rows="6"></textarea>
+
+        <div class="modal-actions">
+
+            <button id="saveEditBtn" class="edit-btn">
+                Save
+            </button>
+
+            <button id="cancelEditBtn" class="delete-btn">
+                Cancel
+            </button>
+
+        </div>
+
+    </div>
 
 </div>
 
