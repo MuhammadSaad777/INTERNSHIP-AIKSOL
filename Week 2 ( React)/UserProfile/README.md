@@ -1,16 +1,84 @@
-# React + Vite
+# React Learning Project (Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A hands-on React project built while learning core concepts step by step — from JSX basics to controlled forms. Built with **Vite** and **React**.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **React** – UI library
+- **Vite** – build tool & dev server
+- **JavaScript (JSX)**
+- **CSS** (plain CSS, per-component stylesheets)
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+# install dependencies
+npm install
 
-## Expanding the ESLint configuration
+# start the dev server
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Then open the local URL shown in the terminal (usually `http://localhost:5173`).
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── UserProfile.jsx / .css
+│   ├── Counter.jsx / .css
+│   ├── Toggle.jsx / .css
+│   ├── ProductItem.jsx / .css
+│   └── RegistrationForm.jsx / .css
+├── App.jsx
+├── App.css
+├── index.css
+└── main.jsx
+```
+
+## Progress Log
+
+### Day 1: Vite & JSX
+- Scaffolded the project using `npm create vite@latest`.
+- Learned core JSX rules — self-closing tags, `className` instead of `class`, camelCase attributes.
+- Built a static `UserProfile` component with hardcoded content.
+- Rendered `UserProfile` three times inside `App.jsx` to practice component reuse.
+
+### Day 2: Props & State
+- Refactored `UserProfile` to accept `name`, `role`, and `imageUrl` as **props**, making each instance dynamic instead of hardcoded.
+- Learned the `useState` hook.
+- Built a `Counter` component — state holding a number, incremented on button click.
+- Built a `Toggle` component — state holding a boolean, switching between `ON` / `OFF` on click.
+
+### Day 3: Lists & Keys
+- Created an array of 5 product objects (`id`, `name`, `price`) in `App.jsx`.
+- Rendered the list using `.map()`, with a unique `key` prop (`product.id`) on each item to satisfy React's list-rendering requirements.
+- Extracted the list item into its own `ProductItem` component, passing `product` data down as props.
+- Added a **Delete** button to `ProductItem` that calls a function passed down from `App.jsx` (`onDelete`) to remove that product from state — demonstrating **lifting state up** and child-to-parent communication.
+
+### Day 4: Controlled Forms
+- Built a `RegistrationForm` component with `email`, `username`, and `password` inputs.
+- Used a single `useState` object to hold all form values.
+- Bound each input's `value` and `onChange` directly to state, making them **controlled components**.
+- Added an `onSubmit` handler that calls `e.preventDefault()` and logs form data to the console.
+- Added local validation (valid email format, username length, password > 6 characters) with error messages rendered conditionally below each field.
+
+## Key Concepts Covered So Far
+
+| Concept | Where |
+|---|---|
+| JSX syntax rules | Day 1 |
+| Component composition & reuse | Day 1 |
+| Props (parent → child data) | Day 2 |
+| `useState` hook | Day 2 |
+| Rendering lists with `.map()` | Day 3 |
+| `key` prop in lists | Day 3 |
+| Lifting state up / child → parent communication | Day 3 |
+| Controlled form inputs | Day 4 |
+| Form validation | Day 4 |
+
+## Notes
+
+- Profile images (`avatar1.jpg`, `avatar2.jpg`, `avatar3.jpg`) must be placed in the `public/` folder for `UserProfile` to display them correctly.
+- Form submission currently only logs to the browser console (no backend integration yet).
