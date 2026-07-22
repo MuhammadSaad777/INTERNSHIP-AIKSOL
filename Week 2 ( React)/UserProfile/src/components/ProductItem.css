@@ -1,0 +1,32 @@
+.product-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  width: 300px;
+}
+
+.product-name {
+  font-weight: 500;
+}
+
+.product-price {
+  color: #555;
+}
+
+.product-delete-btn {
+  padding: 4px 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #d9534f;
+  color: white;
+  cursor: pointer;
+}
+
+.product-delete-btn:hover {
+  background-color: #c9302c;
+}

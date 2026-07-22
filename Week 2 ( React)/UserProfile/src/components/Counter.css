@@ -1,0 +1,27 @@
+.counter {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 16px;
+  width: 180px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.counter-value {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.counter-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+}
+
+.counter-button:hover {
+  background-color: #555;
+}

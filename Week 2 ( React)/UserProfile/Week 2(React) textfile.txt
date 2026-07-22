@@ -1,0 +1,800 @@
+DAY 1:
+
+
+
+
+
+UserProfile.css:
+.user-profile {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 16px;
+  width: 220px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.user-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.user-name {
+  margin: 4px 0;
+  font-size: 18px;
+}
+
+.user-bio {
+  font-size: 14px;
+  color: #555;
+}
+
+.user-location {
+  font-size: 12px;
+  color: #999;
+}
+UserProfile.jsx:
+import './UserProfile.css';
+
+function UserProfile() {
+  return (
+    <div className="user-profile">
+      <img
+        className="user-avatar"
+        src="/avatar1.jpeg"
+        alt="User avatar"
+      />
+      <h2 className="user-name">Muhammad Saad</h2>
+      <p className="user-bio">
+        Frontend developer who loves React and coffee.
+      </p>
+      <p className="user-location">Lahore, Pakistan</p>
+    </div>
+  );
+
+}
+
+export default UserProfile;
+App.css:
+.app-container {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.profiles-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+App.jsx:
+import './App.css';
+import UserProfile from './components/UserProfile';
+
+function App() {
+  return (
+    <div className="app-container">
+      <h1>User Profiles</h1>
+      <div className="profiles-list">
+        <UserProfile />
+        <UserProfile />
+        <UserProfile />
+      </div>
+    </div>
+  );
+}
+
+export default App;
+index.css:
+body {
+  margin: 0;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: #fafafa;
+}
+main.jsx:
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import './index.css';
+import App from './App.jsx';
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+);
+
+
+
+
+
+
+
+Day 2:
+
+
+
+
+
+
+Counter.css:
+.counter {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 16px;
+  width: 180px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.counter-value {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.counter-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+}
+
+.counter-button:hover {
+  background-color: #555;
+}
+
+Counter.jsx:
+import { useState } from 'react';
+import './Counter.css';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div className="counter">
+      <p className="counter-value">{count}</p>
+      <button className="counter-button" onClick={() => setCount(count + 1)}>
+        Increment
+      </button>
+    </div>
+  );
+}
+
+export default Counter;
+
+Toggle.css:
+
+.toggle {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 16px;
+  width: 180px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.toggle-status {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.toggle-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+}
+
+.toggle-button:hover {
+  background-color: #555;
+}
+
+Toggle.jsx:
+import { useState } from 'react';
+import './Toggle.css';
+
+function Toggle() {
+  const [isOn, setIsOn] = useState(false);
+
+  return (
+    <div className="toggle">
+      <p className="toggle-status">{isOn ? 'ON' : 'OFF'}</p>
+      <button className="toggle-button" onClick={() => setIsOn(!isOn)}>
+        Toggle
+      </button>
+    </div>
+  );
+}
+
+export default Toggle;
+
+UserProfile.css:
+.user-profile {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 16px;
+  width: 220px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.user-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.user-name {
+  margin: 4px 0;
+  font-size: 18px;
+}
+
+.user-role {
+  font-size: 14px;
+  color: #777;
+}
+
+UserProfile.jsx:
+import './UserProfile.css';
+
+function UserProfile({ name, role, imageUrl }) {
+  return (
+    <div className="user-profile">
+      <img
+        className="user-avatar"
+        src={imageUrl}
+        alt={name}
+      />
+      <h2 className="user-name">{name}</h2>
+      <p className="user-role">{role}</p>
+    </div>
+  );
+}
+
+export default UserProfile;
+
+App.css:
+.app-container {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.app-container h1 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.profiles-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+App.jsx:
+import './App.css';
+import UserProfile from './components/UserProfile';
+import Counter from './components/Counter';
+import Toggle from './components/Toggle';
+
+function App() {
+  return (
+    <div className="app-container">
+      <h1>User Profiles</h1>
+      <div className="profiles-list">
+        <UserProfile
+          name="Muhammad Saad"
+          role="Frontend Developer"
+          imageUrl="/avatar1.jpeg"
+        />
+        <UserProfile
+          name="Cristiano Ronaldo"
+          role="Backend Developer"
+          imageUrl="/avatar2.jpeg"
+        />
+        <UserProfile
+          name="Babar Azam"
+          role="AI Engineer"
+          imageUrl="/avatar3.jpeg"
+        />
+      </div>
+
+      <h1>Counter</h1>
+      <Counter />
+
+      <h1>Toggle</h1>
+      <Toggle />
+    </div>
+  );
+}
+
+export default App;
+
+index.css:
+body {
+  margin: 0;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: #fafafa;
+}
+
+
+main.jsx:
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import './index.css';
+import App from './App.jsx';
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+);
+
+
+
+
+
+
+Day 3:
+
+ProductItem.jsx:
+
+import './ProductItem.css';
+
+function ProductItem({ product, onDelete }) {
+  return (
+    <li className="product-item">
+      <span className="product-name">{product.name}</span>
+      <span className="product-price">${product.price}</span>
+      <button
+        className="product-delete-btn"
+        onClick={() => onDelete(product.id)}
+      >
+        Delete
+      </button>
+    </li>
+  );
+}
+
+export default ProductItem;
+
+
+ProductItem.css:
+
+
+.product-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  width: 300px;
+}
+
+.product-name {
+  font-weight: 500;
+}
+
+.product-price {
+  color: #555;
+}
+
+.product-delete-btn {
+  padding: 4px 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #d9534f;
+  color: white;
+  cursor: pointer;
+}
+
+.product-delete-btn:hover {
+  background-color: #c9302c;
+}
+
+
+
+App.jsx:
+
+import { useState } from 'react';
+import './App.css';
+import UserProfile from './components/UserProfile';
+import Counter from './components/Counter';
+import Toggle from './components/Toggle';
+import ProductItem from './components/ProductItem';
+
+function App() {
+  const [products, setProducts] = useState([
+    { id: 1, name: 'Wireless Mouse', price: 15 },
+    { id: 2, name: 'Mechanical Keyboard', price: 45 },
+    { id: 3, name: 'USB-C Hub', price: 25 },
+    { id: 4, name: 'Laptop Stand', price: 30 },
+    { id: 5, name: 'Webcam', price: 40 },
+  ]);
+
+  function handleDelete(id) {
+    setProducts(products.filter((product) => product.id !== id));
+  }
+
+  return (
+    <div className="app-container">
+      <h1>User Profiles</h1>
+      <div className="profiles-list">
+        <UserProfile
+          name="Jane Doe"
+          role="Frontend Developer"
+          imageUrl="/avatar1.jpg"
+        />
+        <UserProfile
+          name="John Smith"
+          role="Backend Developer"
+          imageUrl="/avatar2.jpg"
+        />
+        <UserProfile
+          name="Amina Khan"
+          role="UI/UX Designer"
+          imageUrl="/avatar3.jpg"
+        />
+      </div>
+
+      <h1>Counter</h1>
+      <Counter />
+
+      <h1>Toggle</h1>
+      <Toggle />
+
+      <h1>Products</h1>
+      <ul className="products-list">
+        {products.map((product) => (
+          <ProductItem
+            key={product.id}
+            product={product}
+            onDelete={handleDelete}
+          />
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default App;
+
+
+
+App.css:
+
+.app-container {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.app-container h1 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.profiles-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.products-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+index.css,main.jsx,UserProfile.jsx,UserProfile.css,Counter.jsx,Counter.css,Toggle.css,Toggle.jsx:
+Same as Day 2.
+
+
+
+
+Day 4:
+
+
+
+RegistrationForm.jsx:
+import { useState } from 'react';
+import './RegistrationForm.css';
+
+function RegistrationForm() {
+  const [formData, setFormData] = useState({
+    email: '',
+    username: '',
+    password: '',
+  });
+
+  const [errors, setErrors] = useState({
+    email: '',
+    username: '',
+    password: '',
+  });
+
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  }
+
+  function validate() {
+    const newErrors = { email: '', username: '', password: '' };
+    let isValid = true;
+
+    if (!formData.email.includes('@')) {
+      newErrors.email = 'Please enter a valid email address.';
+      isValid = false;
+    }
+
+    if (formData.username.trim().length < 3) {
+      newErrors.username = 'Username must be at least 3 characters.';
+      isValid = false;
+    }
+
+    if (formData.password.length <= 6) {
+      newErrors.password = 'Password must be more than 6 characters.';
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const isValid = validate();
+    if (isValid) {
+      console.log('Form submitted:', formData);
+    }
+  }
+
+  return (
+    <form className="registration-form" onSubmit={handleSubmit}>
+      <div className="form-field">
+        <label htmlFor="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+        />
+        {errors.email && <p className="error-text">{errors.email}</p>}
+      </div>
+
+      <div className="form-field">
+        <label htmlFor="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          value={formData.username}
+          onChange={handleChange}
+        />
+        {errors.username && <p className="error-text">{errors.username}</p>}
+      </div>
+
+      <div className="form-field">
+        <label htmlFor="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          value={formData.password}
+          onChange={handleChange}
+        />
+        {errors.password && <p className="error-text">{errors.password}</p>}
+      </div>
+
+      <button type="submit" className="submit-btn">
+        Register
+      </button>
+    </form>
+  );
+}
+
+export default RegistrationForm;
+
+
+
+
+Registrationform.css:
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-field {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field label {
+  font-size: 14px;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.form-field input {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.error-text {
+  color: #d9534f;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.submit-btn {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.submit-btn:hover {
+  background-color: #555;
+}
+
+
+
+App.jsx:
+import { useState } from 'react';
+import './App.css';
+import UserProfile from './components/UserProfile';
+import Counter from './components/Counter';
+import Toggle from './components/Toggle';
+import ProductItem from './components/ProductItem';
+import RegistrationForm from './components/RegistrationForm';
+
+function App() {
+  const [products, setProducts] = useState([
+    { id: 1, name: 'Wireless Mouse', price: 15 },
+    { id: 2, name: 'Mechanical Keyboard', price: 45 },
+    { id: 3, name: 'USB-C Hub', price: 25 },
+    { id: 4, name: 'Laptop Stand', price: 30 },
+    { id: 5, name: 'Webcam', price: 40 },
+  ]);
+
+  function handleDelete(id) {
+    setProducts(products.filter((product) => product.id !== id));
+  }
+
+  return (
+    <div className="app-container">
+      <h1>User Profiles</h1>
+      <div className="profiles-list">
+        <UserProfile
+          name="Jane Doe"
+          role="Frontend Developer"
+          imageUrl="/avatar1.jpg"
+        />
+        <UserProfile
+          name="John Smith"
+          role="Backend Developer"
+          imageUrl="/avatar2.jpg"
+        />
+        <UserProfile
+          name="Amina Khan"
+          role="UI/UX Designer"
+          imageUrl="/avatar3.jpg"
+        />
+      </div>
+
+      <h1>Counter</h1>
+      <Counter />
+
+      <h1>Toggle</h1>
+      <Toggle />
+
+      <h1>Products</h1>
+      <ul className="products-list">
+        {products.map((product) => (
+          <ProductItem
+            key={product.id}
+            product={product}
+            onDelete={handleDelete}
+          />
+        ))}
+      </ul>
+
+      <h1>Registration Form</h1>
+      <RegistrationForm />
+    </div>
+  );
+}
+
+export default App;
+
+
+App.css:
+
+
+.app-container {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.app-container h1 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.profiles-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.products-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+index.css,main.jsx,UserProfile.jsx/.css, Counter.jsx/.css, Toggle.jsx/.css, ProductItem.jsx/.css:
+No changes
+
+
+
+
+Day 5:
+
+
+Day 5 is done under seperate folder named UserProfile(Tailwind CSS)
+
+
+
+Day 6:
+
+Day 6 is done under seperate folder named Recipe Book Project.
+
+
+
+
+
+
+
+
+
+

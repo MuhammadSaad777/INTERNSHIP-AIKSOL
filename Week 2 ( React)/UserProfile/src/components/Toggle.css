@@ -1,0 +1,27 @@
+.toggle {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 16px;
+  width: 180px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.toggle-status {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.toggle-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+}
+
+.toggle-button:hover {
+  background-color: #555;
+}
